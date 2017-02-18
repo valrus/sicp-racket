@@ -1,0 +1,63 @@
+Ackermann's function translated from Lisp::
+
+  Rule 1: A(0, y) = 2y
+  Rule 2: A(x, 0) = 0
+  Rule 3: A(x, 1) = 2
+  Rule 4: A(x, y) = A(x - 1, A(x, y - 1))
+
+Evaluation 1: 
+
+.. parsed-literal::
+
+  A(1, 10) = A(0, A(1, 9))             by Rule 4
+           = 2A(1, 9)                  by Rule 1
+           = 2A(0, A(1, 8))            by Rule 4
+           = 2(2(A(1, 8)))             by Rule 1
+           ...
+           = 2\ :sup:`k`\ A(1, 10 - k) by extrapolation from previous steps
+           = 2\ :sup:`9`\ A(1, 1)      when k = 9
+           = 2\ :sup:`9` * 2           by Rule 3
+           = 2\ :sup:`10`
+           = 1024
+
+Evaluation 2:
+
+.. parsed-literal::
+
+   A(2, 4) = A(1, A(2, 3))             by Rule 4
+           = A(1, A(1, A(2, 2)))       by Rule 4
+           = A(1, A(1, A(1, A(2, 1)))) by Rule 4
+           = A(1, A(1, A(1, 2)))       by Rule 3
+           = A(1, A(1, A(0, A(1, 1)))) by Rule 4
+           = A(1, A(1, A(0, 2)))       by Rule 3
+           = A(1, A(1, 4))             by Rule 1
+           = A(1, 2\ :sup:`4`)         by Evaluation 1
+           = 2\ :sup:`2 ^ 4`           by Evaluation 1 again
+           = 2\ :sup:`16`
+           = 65536
+
+Unfortunately reStructuredText is not up to the task of stacked exponents!
+
+Evaluation 3:
+
+.. parsed-literal::
+
+   A(3, 3) = A(2, A(3, 2))       by Rule 4
+           = A(2, A(2, A(3, 1))) by Rule 4
+           = A(2, A(2, 2))       by Rule 3
+           = A(2, A(1, A(2, 1))) by Rule 4
+           = A(2, A(1, 2))       by Rule 3
+           = A(2, A(0, A(1, 1))) by Rule 4
+           = A(2, A(0, 2))       by Rule 3
+           = A(2, 4)             by Rule 1
+           = 65536               since this is the same as Evaluation 2
+
+Function definitions, using Evaluations 1 and 2 above:
+
+.. parsed-literal::
+
+   (f n) = 2n
+
+   (g n) = 2\ :sup:`n`
+
+   (h n) = 2\ :sup:`2 ^ n`
