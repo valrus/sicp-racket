@@ -5,7 +5,8 @@ Ackermann's function translated from Lisp::
   Rule 3: A(x, 1) = 2
   Rule 4: A(x, y) = A(x - 1, A(x, y - 1))
 
-Evaluation 1: 
+Evaluation 1 
+------------
 
 .. parsed-literal::
 
@@ -20,7 +21,8 @@ Evaluation 1:
            = 2\ :sup:`10`
            = 1024
 
-Evaluation 2:
+Evaluation 2
+------------
 
 .. parsed-literal::
 
@@ -38,7 +40,8 @@ Evaluation 2:
 
 Unfortunately reStructuredText is not up to the task of stacked exponents!
 
-Evaluation 3:
+Evaluation 3
+------------
 
 .. parsed-literal::
 
