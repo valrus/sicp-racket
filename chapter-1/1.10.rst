@@ -34,7 +34,7 @@ Evaluation 2
            = A(1, A(1, A(0, 2)))       by Rule 3
            = A(1, A(1, 4))             by Rule 1
            = A(1, 2\ :sup:`4`)         by Evaluation 1
-           = 2\ :sup:`2 ^ 4`           by Evaluation 1 again
+           = 2\ :sup:`2^4`           by Evaluation 1 again
            = 2\ :sup:`16`
            = 65536
 
@@ -63,4 +63,4 @@ Function definitions, using Evaluations 1 and 2 above:
 
    (g n) = 2\ :sup:`n`
 
-   (h n) = 2\ :sup:`2 ^ n`
+   (h n) = 2\ :sup:`2^n`
